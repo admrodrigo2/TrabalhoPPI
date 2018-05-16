@@ -4,8 +4,8 @@ create table Funcionario(
 	dataNasc date,
 	sexo char(1),
 	estCivil varchar(15),
-	cargo varchar(50)
-	especialidade varchar(50)
+	cargo varchar(50),
+	especialidade varchar(50),
 	rg varchar(13),
 	primary key(cpf),
 );
