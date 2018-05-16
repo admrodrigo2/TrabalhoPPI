@@ -1,61 +1,59 @@
-create table Endereco(
-	Id int auto_increment,
-	CEP varchar(9),
-	TipoLog varchar(7),
-	Logradouro ,
-	Numero varchar(4),
-	Comp,
-	Bairro varchar(100),
-	Cidade varchar(100),
-	Estado varchar(100),
-	primary key(id)
+create table Funcionario(
+	cpf varchar(11),
+	nome varchar(100),
+	dataNasc date,
+	sexo char(1),
+	estCivil varchar(15),
+	cargo varchar(50)
+	especialidade varchar(50)
+	rg varchar(13),
+	primary key(cpf),
 );
 
-create table Funcionario(
-	CPF varchar(11),
-	Nome varchar(100),
-	DataNasc date,
-	Sexo char(1),
-	EstCivil varchar(15),
-	Cargo varchar(50)
-	Especialidade varchar(50)
-	Rg varchar(13),
-	Endereco int,
-	primary key(CPF),
-	foreign key(Endereco) references Endereco(Id)
-	ON DELETE NO ACTION
-	ON UPDATE NO ACTION
+create table Endereco(
+	id int auto_increment,
+	cep varchar(9),
+	tipoLog varchar(7),
+	logradouro varchar(50),
+	numero varchar(4),
+	comp varchar(30),
+	bairro varchar(100),
+	cidade varchar(100),
+	estado varchar(100),
+	funcionario varchar(11),
+	primary key(id),
+	foreign key(funcionario) references Funcionario(cpf)
 );
 
 create table Paciente(
-	Id int auto_increment,
-	Nome varchar(50),
-	Telefone varchar(10),
-	primary key(Id)
+	id int auto_increment,
+	nome varchar(50),
+	telefone varchar(10),
+	primary key(id)
 );
 
 create table Agenda(
-	IdAgendamento int auto_increment,
-	Data date,
-	Hora int,
-	IdFuncionario varchar(11),
-	IdPaciente int,
-	foreign key(IdFuncionario) references Funcionario(CPF),
-	foreign key(IdPaciente) references Paciente(Id)
+	idAgendamento int auto_increment,
+	data date,
+	hora int,
+	idFuncionario varchar(11),
+	idPaciente int,
+	foreign key(idFuncionario) references Funcionario(cpf),
+	foreign key(idPaciente) references Paciente(id)
 );
 
 create table Contato(
-	Id int auto_increment,
-	Nome varchar(50),
-	Email varchar(50),
-	Motivo varchar(50),
-	Mensagem varchar(150),
-	primary key(Id)
+	id int auto_increment,
+	nome varchar(50),
+	email varchar(50),
+	motivo varchar(50),
+	mensagem varchar(150),
+	primary key(id)
 );
 
 create table Usuario(
-	Id int auto_increment,
-	Login varchar(50),
-	Senha varchar(50),
-	primary key(Id)
+	id int auto_increment,
+	login varchar(50),
+	senha varchar(50),
+	primary key(id)
 );
