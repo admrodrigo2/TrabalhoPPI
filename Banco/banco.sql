@@ -7,7 +7,7 @@ create table Funcionario(
 	cargo varchar(50),
 	especialidade varchar(50),
 	rg varchar(13),
-	primary key(cpf),
+	primary key(cpf)
 );
 
 create table Endereco(
@@ -34,10 +34,11 @@ create table Paciente(
 
 create table Agenda(
 	idAgendamento int auto_increment,
-	data date,
+	`data` date,
 	hora int,
 	idFuncionario varchar(11),
 	idPaciente int,
+    primary key(idAgendamento),
 	foreign key(idFuncionario) references Funcionario(cpf),
 	foreign key(idPaciente) references Paciente(id)
 );
