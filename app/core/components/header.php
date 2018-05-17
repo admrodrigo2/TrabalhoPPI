@@ -7,16 +7,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#" onclick="openPage('home', this);">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Galeria</a>
+        <a class="nav-link" href="#" onclick="openPage('galeria', this);">Galeria</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contato</a>
+        <a class="nav-link" href="#" onclick="openPage('contato', this);">Contato</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Agendamento</a>
+        <a class="nav-link" href="#" onclick="openPage('agendamento', this);">Agendamento</a>
       </li>
     </ul>
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
