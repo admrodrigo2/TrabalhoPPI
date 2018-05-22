@@ -9,16 +9,56 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 		<style>
 		body {
-		  padding: 50px;
+		  /*padding: 50px;*/
 		}
 		.tab {
-		  padding: 20px;
 		  display: none;
-		  border: 0.5px solid lightgray;
+		}
+
+		.divMain {
+			display: none;
+		}
+
+		/*.navbar:before{
+			position: absolute;
+		    z-index: -1;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		    content: "";
+		    transition: opacity .15s linear;
+		    opacity: 0;
+		    border-bottom: 1px solid rgba(0,0,0,.1);
+		    background-color: #fff;
+		}*/
+		
+
+		.section {
+			position: relative;
+			padding: 5rem 0;
+		}
+		.section-top{
+			padding-top: 13.14rem;
+		}
+
+		.bg-cover, .bg-overlay, .bg-overlay:before {
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    left: 0;
+		}
+
+		.bg-cover {
+		    background-repeat: no-repeat;
+		    background-position: 50%;
+		    background-size: cover;
 		}
 
 		</style>
 		<script src="assets/js/script.js"></script>
+		<script src="assets/php/consultaAgenda.php"></script>
 	</head>
 	<body>
 		<?php include 'app/core/components/header.php';?>
