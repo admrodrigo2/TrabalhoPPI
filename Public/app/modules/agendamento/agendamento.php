@@ -60,7 +60,7 @@
 
 					<div class="form-group">
   						<label for="disponivel">Horário disponível :</label>
-  						<select class="form-control" name="disponível" id="medico"><option>Selecione o horário</option></select>
+  						<select class="form-control" name="disponivel" id="disponivel"><option>Selecione o horário</option></select>
 					</div>
 
 					<div class="form-group">
