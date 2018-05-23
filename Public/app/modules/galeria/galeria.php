@@ -57,5 +57,11 @@
 				<img class="img-fluid" src="assets/images/galeria/gale6.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)">
 			</div>
 		</div>
+		<div class="row align-items-center">
+			<iframe width="420" height="315" class="col-md-6 offset-md-3" 
+			src="http://www.youtube.com/embed/L9ZpQMPtLNI">
+			</iframe>
+		</div>
+
 	</div>
 </div>
