@@ -97,7 +97,9 @@ function openPage(idPagina, link)
     $("#divMissao").fadeIn(1000);
 
   alterNav();
-  $(".navbar-toggler").
+  $(".navbar-toggler").addClass("collapsed");
+  $(".navbar-toggler").attr('aria-expanded', false)
+  $(".navbar-collapse").removeClass("show");
 }
 
 function initGaleria(){
