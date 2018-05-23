@@ -14,7 +14,7 @@ if($_GET['acao'] == 'especialidade'){
 	}
 
 	$conn = conectaAoMySQL();
-	$stmt = $conn->prepare("SELECT especialidade, id_funcionario FROM Funcionario");
+	$stmt = $conn->prepare("SELECT especialidade, id_funcionario FROM Funcionario WHERE especialidade <> '' ");
 	$stmt->execute();
 	$stmt->bind_result($especialidade, $id_funcionario);	
 	while($stmt->fetch()){
