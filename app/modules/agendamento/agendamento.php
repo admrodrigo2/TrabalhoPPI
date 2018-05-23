@@ -50,7 +50,7 @@
 
     				<div class="form-group">
  						<label for="medico">Médico:</label>
- 						<select class="form-control" name="medico" id="medico"></select>
+ 						<select class="form-control" name="medico" id="medico"><option>Selecione o médico</option></select>
  					</div>
 
  					<div class="form-group">
@@ -60,7 +60,7 @@
 
 					<div class="form-group">
   						<label for="disponivel">Horário disponível :</label>
-  						<select class="form-control" name="disponível" id="medico"></select>
+  						<select class="form-control" name="disponível" id="medico"><option>Selecione o horário</option></select>
 					</div>
 
 					<div class="form-group">
