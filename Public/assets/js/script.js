@@ -96,10 +96,12 @@ function openPage(idPagina, link)
   if(idPagina == "home")
     $("#divMissao").fadeIn(1000);
 
-  alterNav();
-  $(".navbar-toggler").addClass("collapsed");
-  $(".navbar-toggler").attr('aria-expanded', false)
-  $(".navbar-collapse").removeClass("show");
+  if($(".navbar-toggler").attr('aria-expanded') == "true"){
+    alterNav();
+    $(".navbar-toggler").addClass("collapsed");
+    $(".navbar-toggler").attr('aria-expanded', false);
+    $(".navbar-collapse").removeClass("show");
+  }
 }
 
 function initGaleria(){
