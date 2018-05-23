@@ -43,17 +43,55 @@ function mainText(t){
 
 $(function(){
 
-  // especialidade
+  // Especialidade
   function especialidade(){
     $.ajax({
       type: 'GET',
-      url: 'consultaAgenda.php',
-      data: { acao: 'especialidade'},
+      url: 'assets/php/consultaAgenda.php?variavel=',
+      data: {
+        acao: 'especialidade'
+      },
       dataType: 'json',
       success: function(data){
         console.log(data);
+        
+        for(var i = 0; i<data.length; i++){
+          //$('select[name=especialidade]').append('<option value=>'+data[i]['especialidade']+'</option>');
+          $('select[name=especialidade]').append('<option value='+data[i]['id_funcionario']+'">'+data[i]['especialidade']+'</option>');
+        }
       }
     });
   }
   especialidade();
+
+  // Medico
+  function medico(especialidade){
+    $.ajax({
+      type: 'GET',
+      url: 'assets/php/consultaAgenda.php?variavel=',
+      data: {
+        acao: 'medico',
+        id: especialidade
+      },
+      dataType: 'json',
+      beforeSend: function(){
+        $('select[name=medico]').html('<option>Carregando...</option>');
+      },
+      success: function(data){
+        console.log(data);
+        $('select[name=medico]').html('');
+        $('select[name=medico]').append('<option>Selecione o medico</option>');
+        for(var i = 0; i < i<data.length; i++){
+          $('select[name=medico]').append('<option value='+data[i]['id_funcionario']+'">'+data[i]['nome']+'</option>');
+        }
+      }
+    });
+  }
+
+  $('select[name=especialidade]').change(function(){
+    var id = $(this).val();
+    medico(id);
+
+  })
+
 });
