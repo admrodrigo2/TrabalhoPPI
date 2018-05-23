@@ -23,6 +23,9 @@ function openPage(idPagina, link)
   $("#" + idPagina).fadeIn(500);
   if (link != null)
     link.parentNode.className += " active";
+
+  if(idPagina == "galeria")
+    initGaleria();
 }
 
 function alterNav(){
@@ -95,3 +98,18 @@ $(function(){
   })
 
 });
+
+
+function initGaleria(){
+  $(".img").each(function(i) {
+    $(this).delay(300*i).fadeIn();
+  });
+}
+
+function imgMouseEnter(img){
+  img.style.border = "5px solid red";
+}
+
+function imgMouseLeave(img){
+  img.style.border = "";
+}
