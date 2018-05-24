@@ -92,8 +92,6 @@ function openPage(idPagina, link)
 
   if(idPagina == "galeria")
     initGaleria();
-  if(idPagina == "home")
-    $("#divMissao").fadeIn(1000);
 
   if($(".navbar-toggler").attr('aria-expanded') == "true"){
     alterNav();
