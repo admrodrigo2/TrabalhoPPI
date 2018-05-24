@@ -34,7 +34,7 @@
 	  
 	</section>
 
-	<div class="container section" id="main">
+	<div class="container section">
 		<div class="row align-items-center">
 			<div class="col-6 mx-auto col-md-6 order-md-2">
 				<img class="img-fluid mb-3 mb-md-0" src="assets/images/iconLinux.png" alt style="max-height: 500px;">

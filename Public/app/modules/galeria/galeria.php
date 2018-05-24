@@ -34,27 +34,27 @@
 	  
 	</section>
 
-	<div class="container section" id="main">
+	<div class="container section">
 		<div class="row align-items-center">
 			<div class="col-md-4 img">
-				<img class="img-fluid" src="assets/images/galeria/gale1.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)">
+				<img class="img-fluid" src="assets/images/galeria/gale1.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)" alt>
 			</div>
 			<div class="col-md-4 img">
-				<img class="img-fluid" src="assets/images/galeria/gale2.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)">
+				<img class="img-fluid" src="assets/images/galeria/gale2.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)" alt>
 			</div>
 			<div class="col-md-4 img">
-				<img class="img-fluid" src="assets/images/galeria/gale3.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)">
+				<img class="img-fluid" src="assets/images/galeria/gale3.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)" alt>
 			</div>
 		</div>
 		<div class="row align-items-center">
 			<div class="col-md-4 img">
-				<img class="img-fluid" src="assets/images/galeria/gale4.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)">
+				<img class="img-fluid" src="assets/images/galeria/gale4.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)" alt>
 			</div>
 			<div class="col-md-4 img">
-				<img class="img-fluid" src="assets/images/galeria/gale5.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)">
+				<img class="img-fluid" src="assets/images/galeria/gale5.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)" alt>
 			</div>
 			<div class="col-md-4 img">
-				<img class="img-fluid" src="assets/images/galeria/gale6.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)">
+				<img class="img-fluid" src="assets/images/galeria/gale6.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)" alt>
 			</div>
 		</div>
 		<div class="row align-items-center">

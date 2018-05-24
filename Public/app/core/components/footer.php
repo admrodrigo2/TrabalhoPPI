@@ -10,7 +10,7 @@
 				<ul>
 					<li><a target="_blank" href="https://www.facebook.com/matheus.santiago.50115">Matheus Santiago Neto</a></li>
 					<li><a target="_blank" href="https://www.facebook.com/rodrigo.rezende.7967">Rodrigo Souza Rezende</a></li>
-					<p style="font-size: .8rem;">Feito com <i class="fas fa-heart heart"></i> & <i class="fas fa-coffee coffee"></i> em Uberlândia</p>
+					<li><p style="font-size: .8rem;">Feito com <i class="fas fa-heart heart"></i> & <i class="fas fa-coffee coffee"></i> em Uberlândia</p></li>
 				</ul>
 			</div>
 		</div>
