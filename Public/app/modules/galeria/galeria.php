@@ -34,7 +34,7 @@
 	  
 	</section>
 
-	<div class="container section pb-0" id="main">
+	<div class="container section" id="main">
 		<div class="row align-items-center">
 			<div class="col-md-4 img">
 				<img class="img-fluid" src="assets/images/galeria/gale1.jpg" onmouseenter="imgMouseEnter(this)" onmouseleave="imgMouseLeave(this)">

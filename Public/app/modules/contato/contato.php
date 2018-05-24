@@ -34,7 +34,7 @@
 	  
 	</section>
 
-	<div class="container section pb-0" id="main">
+	<div class="container section" id="main">
 		<div class="row align-items-center">
 			
 			<div class="col-md-6 order-md-1 text-left text-md-left pr-md-5">

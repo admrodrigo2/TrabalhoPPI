@@ -95,6 +95,7 @@
 .secondBar {
     background-color: #33373e;
     text-align: center;
+    min-height: 72px;
 }
 
 .secondBar a {
@@ -124,6 +125,14 @@
 
 #myFooter .twitter:hover {
     color: #00aced;
+}
+
+#myFooter .heart:hover {
+    color: #ff0000;
+}
+
+#myFooter .coffee:hover {
+    color: #795548;
 }
 
 @media screen and (max-width: 767px) {
