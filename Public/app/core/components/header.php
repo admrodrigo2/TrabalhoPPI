@@ -33,18 +33,26 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="http://matheussn23.atwebpages.com" target="_blank" method="POST" id="form-login">
           <div class="form-group">
             <label>User: </label>
-            <input class="form-control" type="text" name="user" placeholder="Digite o nome de usuário">
+            <input class="form-control" type="text" name="user" placeholder="Digite o nome de usuário" required>
           </div>
           <div class="form-group">
             <label>Password: </label>
-            <input class="form-control" type="password" name="senha" placeholder="Digite sua senha">
+            <input class="form-control" type="password" name="senha" placeholder="Digite sua senha" required>
           </div>
+          <input type="hidden" name="initSession" value="1">
 
-          <input class="btn btn-success" type="submit" name="submit" value="Sign in">
+          <input class="btn btn-success " type="button" name="Btn" onclick="login(this)" value="Sign in">
         </form>
+        <div class="alert alert-success" id="divSuccessMsg" style="display: none; margin-top: 12px; font-size: 1.2em;">
+          <strong>Dados salvos com sucesso.</strong>
+        </div>
+
+        <div class="alert alert-danger" id="divErrorMsg" style="display: none; margin-top: 12px;">
+          <strong>Ocorreu uma falha ao executar a operação: </strong><span id="errorMsg"></span>
+        </div>
       </div>
       
     </div>

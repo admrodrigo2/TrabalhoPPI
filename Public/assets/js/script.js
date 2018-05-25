@@ -1,7 +1,6 @@
 $(function () {
   $("#home").fadeIn(1000);
   $("#divMissao").fadeIn(1000);
-  especialidade();
     
   $('select[name=especialidade]').change(function(){
     var id = $(this).val();
@@ -38,8 +37,8 @@ function especialidade(){
       console.log(data);
       
       for(var i = 0; i<data.length; i++){
-        //$('select[name=especialidade]').append('<option value=>'+data[i]['especialidade']+'</option>');
-        $('select[name=especialidade]').append('<option value='+data[i]['id_funcionario']+'">'+data[i]['especialidade']+'</option>');
+        //Utilizar JS/DOM
+        $('select[name=especialidade]').append('<option value="'+data[i]['id_funcionario']+'">'+data[i]['especialidade']+'</option>');
       }
     }
   });
@@ -62,8 +61,8 @@ function medico(especialidade){
       console.log(data);
       $('select[name=medico]').html('');
       $('select[name=medico]').append('<option>Selecione o medico</option>');
-      for(var i = 0; i < i<data.length; i++){
-        $('select[name=medico]').append('<option value='+data[i]['id_funcionario']+'">'+data[i]['nome']+'</option>');
+      for(var i = 0; i<data.length; i++){
+        $('select[name=medico]').append('<option value="'+data[i]['id_funcionario']+'">'+data[i]['nome']+'</option>');
       }
     }
   });
@@ -92,6 +91,10 @@ function openPage(idPagina, link)
 
   if(idPagina == "galeria")
     initGaleria();
+  if(idPagina == "agendamento")
+    especialidade();
+  if(idPagina == "home")
+    $("#divMissao").fadeIn(1000);
 
   if($(".navbar-toggler").attr('aria-expanded') == "true"){
     alterNav();
@@ -113,4 +116,40 @@ function imgMouseEnter(img){
 
 function imgMouseLeave(img){
   img.style.border = "";
+}
+
+function login(btn){
+  btn.disabled = true;
+  var formData = new FormData($('#form-login')[0]);
+
+  $.ajax({
+    url: 'assets/php/login.php',
+    type: 'POST',
+    async: true,
+    dataType: 'html',
+    data: formData,
+    processData: false,
+    contentType: false,
+
+    success: function(result){
+      btn.disabled = false;
+      if(result == "logged"){
+        document.getElementById("divSuccessMsg").innerHTML = result;
+        $("#divSuccessMsg").fadeIn(200).delay(500).fadeOut(200);
+        $("#form-login").submit();
+      }
+      else{
+        $('#form-login')[0].reset();
+        document.getElementById("errorMsg").innerHTML = result;
+        $("#divErrorMsg").fadeIn(200).delay(1000).fadeOut(200);
+      }
+    },
+
+    error: function(xhr, status, error) {
+      $('#form-login')[0].reset();
+      document.getElementById("errorMsg").innerHTML = status + error + xhr.responseText;
+      $("#divErrorMsg").fadeIn(200).delay(1000).fadeOut(200);
+      btn.disabled = false;
+    }
+  });
 }
