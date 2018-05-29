@@ -1,5 +1,5 @@
 <?php
-/*
+
 require_once 'assets/php/autenticacao.php';
 require_once 'assets/php/conexaoMysql.php';
 session_start();
@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	if($_POST['initSession'] == 1)
 		loginUsuario($_POST['user'], $_POST['senha'], $conn);
 
-checkOrDie($conn);*/
+checkOrDie($conn);
 
 ?>
 <!DOCTYPE html>
