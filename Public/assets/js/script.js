@@ -1,7 +1,7 @@
 $(function () {
   $("#home").fadeIn(1000);
   $("#divMissao").fadeIn(1000);
-    
+  especialidade();
   $('select[name=especialidade]').change(function(){
     var id = $(this).val();
     medico(id);
@@ -68,6 +68,56 @@ function medico(especialidade){
   });
 }
 
+function hora(){
+    
+    var id_funcionario = document.getElementById('medico').value;
+    var dia = new Date(document.getElementById('consulta').value);
+    var atual = new Date();
+
+    if(dia < atual){
+      alert("O agendamento não pode ser em data posterior.");
+    }
+    else{
+
+    var a = dia.getFullYear().toString();
+    var m = (dia.getMonth() + 1).toString();
+    var d = (dia.getDate() + 1).toString();
+    (d.length == 1) && (d = '0' + d);
+    (m.length == 1) && (m = '0' + m)
+    var aaaammdd = a + m + d;
+ 
+      $.ajax({
+        type: 'GET',
+        url: 'assets/php/consultaAgenda.php?variavel=',
+        data: {
+        acao: 'hora',
+        id: id_funcionario,
+        dia: aaaammdd
+      },
+
+      dataType: 'json',
+      beforeSend: function(){
+        $('select[name=disponivel]').html('<option>Carregando...</option>');
+      },
+      success: function(data){
+        console.log(data);
+        $('select[name=disponivel]').html('');
+        $('select[name=medico]').append('<option>Selecione o medico</option>');
+        var x = document.getElementById("disponivel");
+        var option = document.createElement("option");
+
+        for(var i = 0; i<data.length; i++){
+          
+          option.text = data[i]['hora']
+          x.add(option);
+        }
+      }
+    
+      });
+    }
+}
+
+
 function alterNav(){
   if($("nav.navbar").hasClass('navbar-dark')){
         $("nav.navbar").removeClass("navbar-dark");
@@ -91,10 +141,6 @@ function openPage(idPagina, link)
 
   if(idPagina == "galeria")
     initGaleria();
-  if(idPagina == "agendamento")
-    especialidade();
-  if(idPagina == "home")
-    $("#divMissao").fadeIn(1000);
 
   if($(".navbar-toggler").attr('aria-expanded') == "true"){
     alterNav();
