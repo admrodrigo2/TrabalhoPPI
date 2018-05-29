@@ -6,10 +6,10 @@
 	  <div class="bg-overlay"></div>
 	  <div class="container">
 	        <div class="row justify-content-center align-items-center">
-	          <div class="col-md-8 col-lg-7">
+	          <div class="col-md-8 col-lg-7 textoCentral">
 
 	            <!-- Preheading -->
-	            <p class="text-white text-muted text-uppercase text-center text-sm">
+	            <p class="text-white text-uppercase text-center text-sm">
 	              Clinica Rodrigão
 	            </p>
 	            
@@ -19,12 +19,12 @@
 	            </h1>
 
 	            <!-- Subheading -->
-	            <p class="lead text-white text-muted text-center mb-5 animate" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="entered">
+	            <p class="lead text-white text-center mb-5 animate" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="entered">
 	              Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;
 	            </p>
 
 	            <!-- Button -->
-	            <p class="text-center text-muted mb-0">
+	            <p class="text-center text-white mb-0">
 	              Faça parte dessa família!
 	            </p>
 
@@ -34,7 +34,7 @@
 	  
 	</section>
 
-	<div class="container section">
+	<div class="container section" id="main">
 		<div class="row align-items-center">
 			<div class="col-6 mx-auto col-md-6 order-md-2">
 				<img class="img-fluid mb-3 mb-md-0" src="assets/images/iconLinux.png" alt style="max-height: 500px;">

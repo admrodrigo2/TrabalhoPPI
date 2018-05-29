@@ -1,11 +1,11 @@
 $(function () {
   $("#home").fadeIn(1000);
   $("#divMissao").fadeIn(1000);
-    
+  especialidade();
   $('select[name=especialidade]').change(function(){
     var id = $(this).val();
     medico(id);
-  })
+  });
 });
 
 $(window).scroll(function() {
@@ -91,10 +91,6 @@ function openPage(idPagina, link)
 
   if(idPagina == "galeria")
     initGaleria();
-  if(idPagina == "agendamento")
-    especialidade();
-  if(idPagina == "home")
-    $("#divMissao").fadeIn(1000);
 
   if($(".navbar-toggler").attr('aria-expanded') == "true"){
     alterNav();

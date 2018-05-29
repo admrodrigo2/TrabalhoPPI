@@ -2,29 +2,30 @@
 
 	<section class="section section-top section-full">
 
-	  <div class="bg-cover" style="background-image: url(assets/images/bg-agendamento.jpeg);"></div>
+	  <div class="bg-cover" style="background-image: url(assets/images/bg-agendamento.jpg);"></div>
 	  <div class="bg-overlay"></div>
 	  <div class="container">
 	        <div class="row justify-content-center align-items-center">
-	          <div class="col-md-8 col-lg-7">
+	          <div class="col-md-8 col-lg-7 textoCentral">
 
 	            <!-- Preheading -->
-	            <p class="text-white text-muted text-uppercase text-center text-sm">
+	            <p class="text-white text-uppercase text-center text-sm">
 	              Clinica Rodrigão
 	            </p>
 	            
 	            <!-- Heading -->
 	            <h1 class="text-white text-center mb-4">
-	              Sua saúde em primeiro lugar
+	              Agendamento
 	            </h1>
 
 	            <!-- Subheading -->
-	            <p class="lead text-white text-muted text-center mb-5 animate" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="entered">
-	              Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;Breve descrição sobre a clínica Rodrigão;
+	            <p class="lead text-white text-center mb-5 animate" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="entered">
+	            	Agende sua consulta de forma rápida e simples! Utilize nosso sistema de agendamento online! Simples e intuitivo.
+	            	Os melhores médicos disponivéis para melhor lhe atender no dia e horário que quiser!
 	            </p>
 
 	            <!-- Button -->
-	            <p class="text-center text-muted mb-0">
+	            <p class="text-center text-white mb-0">
 	              Faça parte dessa família!
 	            </p>
 

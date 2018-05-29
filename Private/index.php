@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once 'assets/php/autenticacao.php';
 require_once 'assets/php/conexaoMysql.php';
 session_start();
@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	if($_POST['initSession'] == 1)
 		loginUsuario($_POST['user'], $_POST['senha'], $conn);
 
-checkOrDie($conn);
+checkOrDie($conn);*/
 
 ?>
 <!DOCTYPE html>
@@ -22,6 +22,7 @@ checkOrDie($conn);
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 		<script src="assets/js/script.js"></script>
 	</head>

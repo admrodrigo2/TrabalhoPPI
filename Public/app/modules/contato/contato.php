@@ -6,10 +6,10 @@
 	  <div class="bg-overlay"></div>
 	  <div class="container">
 	        <div class="row justify-content-center align-items-center">
-	          <div class="col-md-8 col-lg-7">
+	          <div class="col-md-8 col-lg-7 textoCentral">
 
 	            <!-- Preheading -->
-	            <p class="text-white text-muted text-uppercase text-center text-sm">
+	            <p class="text-white text-uppercase text-center text-sm">
 	              Clinica Rodrigão
 	            </p>
 	            
@@ -19,12 +19,12 @@
 	            </h1>
 
 	            <!-- Subheading -->
-	            <p class="lead text-white text-muted text-center mb-5 animate" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="entered">
-	              Entre em contato! Nos envie comentários, sugestões ou reclamações. Estamos sempre prontos para melhor lhe atender.;
+	            <p class="lead text-white text-center mb-5" data-animation="fadeUp" data-animation-order="2" data-animation-trigger="entered">
+	              Entre em contato! Nos envie comentários, sugestões ou reclamações. Estamos sempre prontos para melhor lhe atender;
 	            </p>
 
 	            <!-- Button -->
-	            <p class="text-center text-muted mb-0">
+	            <p class="text-center text-white mb-0">
 	              Faça parte dessa família!
 	            </p>
 
