@@ -4,8 +4,6 @@ require_once('conexaoMysql.php');
 
 $retorno = array();
 
-
-
 if($_GET['acao'] == 'especialidade'){
 	class Consulta 
 	{
@@ -45,6 +43,29 @@ if($_GET['acao'] == 'medico'){
 		$medico->id_funcionario = $id_funcionario;
 
 		$retorno[] = $medico;
+	}	
+}
+
+if($_GET['acao'] == 'hora'){
+	class Disponivel 
+	{
+ 		public $hora;
+ 		public $id_funcionario;
+	}
+
+	$conn = conectaAoMySQL();
+	$id = $_GET['id'];
+	$dia = $_GET['dia'];
+	$stmt = $conn->prepare("SELECT hora, id_funcionario FROM Agenda WHERE id_funcionario = ? AND data = ? ");
+	$stmt->bind_param("is", $id, $dia);
+	$stmt->execute();
+	$stmt->bind_result($hora,$id_funcionario);
+	while($stmt->fetch()){
+		$disponivel = new Disponivel();
+		$disponivel->hora = $hora;
+		$disponivel->id_funcionario = $id_funcionario;
+
+		$retorno[] = $disponivel;
 	}	
 }
 
