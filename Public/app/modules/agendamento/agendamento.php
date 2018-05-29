@@ -56,7 +56,7 @@
 
  					<div class="form-group">
   						<label for="consulta">Data da consulta:</label>
-  						<input type="date" class="form-control" id="consulta" name="consulta" required>
+  						<input type="date" class="form-control" id="consulta" name="consulta" onchange="hora()">
 					</div>
 
 					<div class="form-group">
