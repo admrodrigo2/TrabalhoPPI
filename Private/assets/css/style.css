@@ -1,3 +1,8 @@
+.alertDiv {
+    margin: 5rem 0;
+    display: none;
+}
+
 .tab {
   display: none;
   padding: 40px 0;
@@ -42,7 +47,6 @@
     color:white;
     font-size: 28px;
     float: left;
-    font-weight: bold;
     line-height: 68px;
     margin: 0;
     padding: 0;
@@ -111,11 +115,6 @@
         text-align: center;
     }
 }
-
-
-
-/* CSS used for positioning the footers at the bottom of the page. */
-/* You can remove this. */
 
 html{
     height: 100%;

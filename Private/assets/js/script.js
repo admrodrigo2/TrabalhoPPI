@@ -13,7 +13,10 @@ $(function(){
   $('#cpf').mask('000.000.000-00', {reverse: true});
   $('#cep').mask('99999-999', {reverse: true});
   $('#carTrab').mask('9999999', {reverse: true});
+  $('#rg').mask('SS-99.999.999', {reverse: true});
   buscaFunc();
+  buscaCont();
+  buscaAgend()
 })
 
 function openPage(idPagina, link)
@@ -194,15 +197,119 @@ function buscaEnd(cep){
 }
 
 function buscaFunc(){
+  $("#noFunc").hide();
+  $("#buscandoF").fadeIn();
+
   $.ajax({
     url: 'assets/php/buscaFunc.php',
+    type: 'POST',
     async: true,
     dataType: 'json',
-    processData: false,
-    contentType: false,
     cache: false,
-    success: function(result){
-      console.log(result);
+    success: function(result){      
+
+      $("#funcTable tbody>tr").remove();
+      for(var i = 0; i < result.length; i ++){
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += "<td>" + result[i].nome + "</td>";
+        cols += "<td>" + result[i].sexo + "</td>";
+        cols += "<td>" + result[i].cargo + "</td>";
+        cols += "<td>" + result[i].rg + "</td>";
+        cols += "<td>" + result[i].log + "</td>";
+        cols += "<td>" + result[i].cidade + "</td>";
+
+        newRow.append(cols);
+        $("#funcTable").append(newRow);
+      }
+
+      if(result.length == 0){
+        $("#noFunc").fadeIn(2000);
+      }
+      $("#bucandoF").delay(2000).hide();
+
+    },
+
+    error: function(xhr, status, error){
+      alert(status + error + xhr.responseText);
+      return false;
+    }
+  });
+}
+
+function buscaCont(){
+  $("#noCont").hide();
+  $("#buscandoC").fadeIn();
+
+  $.ajax({
+    url: 'assets/php/buscaCont.php',
+    type: 'POST',
+    async: true,
+    dataType: 'json',
+    cache: false,
+    success: function(result){      
+
+      $("#contTable tbody>tr").remove();
+      for(var i = 0; i < result.length; i ++){
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += "<td>" + result[i].nome + "</td>";
+        cols += "<td>" + result[i].email + "</td>";
+        cols += "<td>" + result[i].motivo + "</td>";
+        cols += "<td>" + result[i].mensagem + "</td>";
+
+        newRow.append(cols);
+        $("#contTable").append(newRow);
+      }
+
+      if(result.length == 0){
+        $("#noCont").fadeIn(2000);
+      }
+      $("#buscandoC").delay(2000).hide();
+
+    },
+
+    error: function(xhr, status, error){
+      alert(status + error + xhr.responseText);
+      return false;
+    }
+  });
+}
+
+function buscaAgend(){
+  $("#noAgend").hide();
+  $("#buscandoA").fadeIn();
+
+  $.ajax({
+    url: 'assets/php/buscaAgend.php',
+    type: 'POST',
+    async: true,
+    dataType: 'json',
+    cache: false,
+    success: function(result){      
+
+      $("#agendTable tbody>tr").remove();
+      for(var i = 0; i < result.length; i ++){
+        var newRow = $("<tr>");
+        var cols = "";
+
+        cols += "<td>" + result[i].nomeM + "</td>";
+        cols += "<td>" + result[i].espec + "</td>";
+        cols += "<td>" + result[i].date + "</td>";
+        cols += "<td>" + result[i].nomeP + "</td>";
+        cols += "<td>" + result[i].telefone + "</td>";
+
+        newRow.append(cols);
+        $("#agendTable").append(newRow);
+      }
+
+      if(result.length == 0){
+        $("#noAgend").fadeIn(2000);
+      }
+      $("#buscandoA").delay(2000).hide();
+
     },
 
     error: function(xhr, status, error){

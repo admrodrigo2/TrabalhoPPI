@@ -1,5 +1,5 @@
 <?php
-
+/*
 require_once 'assets/php/autenticacao.php';
 require_once 'assets/php/conexaoMysql.php';
 session_start();
@@ -9,14 +9,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	if($_POST['initSession'] == 1)
 		loginUsuario($_POST['user'], $_POST['senha'], $conn);
 
-checkOrDie($conn);
+checkOrDie($conn);*/
 
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Home</title>
+		<title>Torvalds</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">

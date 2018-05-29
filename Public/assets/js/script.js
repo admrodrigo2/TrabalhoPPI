@@ -6,6 +6,7 @@ $(function () {
     var id = $(this).val();
     medico(id);
   });
+  $('#telefone').mask('(99) 99999-9999', {reverse: true});
 });
 
 $(window).scroll(function() {
@@ -68,6 +69,7 @@ function medico(especialidade){
   });
 }
 
+//Busca hora disponível
 function hora(){
     
     var id_funcionario = document.getElementById('medico').value;
@@ -79,12 +81,12 @@ function hora(){
     }
     else{
 
-    var a = dia.getFullYear().toString();
-    var m = (dia.getMonth() + 1).toString();
-    var d = (dia.getDate() + 1).toString();
-    (d.length == 1) && (d = '0' + d);
-    (m.length == 1) && (m = '0' + m)
-    var aaaammdd = a + m + d;
+      var a = dia.getFullYear().toString();
+      var m = (dia.getMonth() + 1).toString();
+      var d = (dia.getDate() + 1).toString();
+      (d.length == 1) && (d = '0' + d);
+      (m.length == 1) && (m = '0' + m)
+      var aaaammdd = a + m + d;
  
       $.ajax({
         type: 'GET',
@@ -104,17 +106,25 @@ function hora(){
         $('select[name=disponivel]').html('');
         $('select[name=medico]').append('<option>Selecione o medico</option>');
         var x = document.getElementById("disponivel");
-        var option = document.createElement("option");
-
+        
         for(var i = 0; i<data.length; i++){
-          
-          option.text = data[i]['hora']
-          x.add(option);
+          for(var j = 8; j <= 18; j++){
+            myDate = new Date();  
+            myDate.setHours(j, 0, 0, 0);
+            comP = new Date();
+            comP.setHours(data[i]['hora'], 0, 0, 0);
+            if(myDate.getHours() != comP.getHours()) {
+              var option = document.createElement("option");
+
+              option.text = (myDate.getHours() + ":" + myDate.getMinutes() +"0");
+              option.value = j; 
+              x.add(option); 
+            }  
+          }
         }
       }
-    
-      });
-    }
+    });
+  }
 }
 
 

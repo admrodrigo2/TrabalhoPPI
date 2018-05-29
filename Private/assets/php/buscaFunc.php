@@ -1,6 +1,6 @@
 <?php
+
 require_once('conexaoMysql.php');
-require_once('func.php');
 
 class Funcionario {
 	public $nome;
@@ -13,19 +13,17 @@ class Funcionario {
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	try {
-
+		$result = array();
 		$conn = conectaAoMySQL();
 
 		$SQLfunc = "
-			SELECT id_funcionario, nome, sexo, cargo, rg
-			FROM Funcionario
+			SELECT `id_funcionario`, `nome`, `sexo`, `cargo`, `rg` FROM `Funcionario`
 		";
 
 		$SQLend = "
-			SELECT tipo_logradouro, logradouro, cidade
-			FROM EnderecoFunc
-			WHERE id_funcionario = ?
-			LIMIT 1
+			SELECT `tipo_logradouro`, `logradouro`, `cidade`
+			FROM `EnderecoFunc`
+			WHERE `id_funcionario` = ?
 		";
 
 		if(! $stmtfunc = $conn->prepare($SQLfunc))
@@ -41,6 +39,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       	$stmtfunc->bind_result($id, $nome, $sexo, $cargo, $rg);
 
       	while ($stmtfunc->fetch()) {
+
       		if (! $stmtend->bind_param("i", $id))
       			throw new Exception("Falha na operacao bind_param: " . $stmtend->error);
 
@@ -54,12 +53,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	        if($stmtend->num_rows == 1){
 	        	$func = new Funcionario();
 
-				$func->$nome = $nome;
-				$func->$sexo = $sexo;
-				$func->$cargo = $cargo;
-				$func->$rg = $rg;
-				$func->$log = $tipoLog ;
-				$func->$cidade = $cidade;
+				$func->nome = $nome;
+				$func->sexo = $sexo;
+				$func->cargo = $cargo;
+				$func->rg = $rg;
+				$func->log = $tipLog . " " . $log;
+				$func->cidade = $cidade;
 
 				$result[] = $func;
 	        }
