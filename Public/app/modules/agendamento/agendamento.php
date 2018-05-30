@@ -46,12 +46,16 @@
 
 					<div class="form-group">
 						<label for="especialidade">Especialidade:</label>
-      					<select class="form-control" name="especialidade" id="especialidade"><option>Selecione a especialidade</option></select>
+      					<select class="form-control" name="especialidade" id="especialidade">
+      						<option value="">Selecione a especialidade</option>
+      					</select>
     				</div>
 
     				<div class="form-group">
  						<label for="medico">Médico:</label>
- 						<select class="form-control" name="medico" id="medico"><option>Selecione o médico</option></select>
+ 						<select class="form-control" name="medico" id="medico">
+ 							<option>Selecione o médico</option>
+ 						</select>
  					</div>
 
  					<div class="form-group">

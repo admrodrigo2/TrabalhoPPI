@@ -61,7 +61,7 @@ function medico(especialidade){
     success: function(data){
       console.log(data);
       $('select[name=medico]').html('');
-      $('select[name=medico]').append('<option>Selecione o medico</option>');
+      $('select[name=medico]').append('<option value="">Selecione o medico</option>');
       for(var i = 0; i<data.length; i++){
         $('select[name=medico]').append('<option value="'+data[i]['id_funcionario']+'">'+data[i]['nome']+'</option>');
       }
@@ -73,28 +73,20 @@ function medico(especialidade){
 function hora(){
     
     var id_funcionario = document.getElementById('medico').value;
-    var dia = new Date(document.getElementById('consulta').value);
-    var atual = new Date();
+    var data = document.getElementById('consulta').value;
 
-    if(dia < atual){
+    if(!validaData()){
       alert("O agendamento não pode ser em data posterior.");
     }
     else{
 
-      var a = dia.getFullYear().toString();
-      var m = (dia.getMonth() + 1).toString();
-      var d = (dia.getDate() + 1).toString();
-      (d.length == 1) && (d = '0' + d);
-      (m.length == 1) && (m = '0' + m)
-      var aaaammdd = a + m + d;
- 
       $.ajax({
         type: 'GET',
         url: 'assets/php/consultaAgenda.php?variavel=',
         data: {
         acao: 'hora',
         id: id_funcionario,
-        dia: aaaammdd
+        data: data
       },
 
       dataType: 'json',
@@ -102,12 +94,12 @@ function hora(){
         $('select[name=disponivel]').html('<option>Carregando...</option>');
       },
       success: function(data){
-        console.log(data);
+        console.log(data[1]);
         $('select[name=disponivel]').html('');
-        $('select[name=medico]').append('<option>Selecione o medico</option>');
+        $('select[name=disponivel]').append('<option value="">Selecione um horario</option>');
         var x = document.getElementById("disponivel");
         
-        for(var i = 0; i<data.length; i++){
+        /*for(var i = 0; i<data.length; i++){
           for(var j = 8; j <= 18; j++){
             myDate = new Date();  
             myDate.setHours(j, 0, 0, 0);
@@ -121,10 +113,31 @@ function hora(){
               x.add(option); 
             }  
           }
-        }
+        }*/
+      },
+      error: function(xhr, status, error) {
+        console.log(status + error + xhr.responseText);
       }
     });
   }
+}
+
+function validaData(){
+  var data = document.getElementById('consulta').value;
+
+  var now = new Date();
+
+  if(data.substring(0,4) < now.getFullYear())
+    return false;
+
+  if(data.substring(0,4) == now.getFullYear() && (data.substring(5,7) - 1 ) < now.getMonth())
+    return false;
+
+  if(data.substring(0,4) == now.getFullYear() && (data.substring(5,7) - 1 )== now.getMonth() &&
+    data.substring(8, 10) < now.getDate())
+    return false;
+
+  return true;
 }
 
 
