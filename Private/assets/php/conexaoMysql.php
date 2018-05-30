@@ -7,11 +7,15 @@ define("DATABASE", "2564649_clinicadb");
 
 function conectaAoMySQL()
 {
-  $conn = new mysqli(HOST, USER, PASSWORD, DATABASE);
-  if ($conn->connect_error)
-    throw new Exception('Falha na conexão com o MySQL: ' . $conn->connect_error);
+	$conn = new mysqli(HOST, USER, PASSWORD, DATABASE);
+	if ($conn->connect_error)
+		throw new Exception('Falha na conexão com o MySQL: ' . $conn->connect_error);
 
-  return $conn;   
+	if(!$conn->set_charset("utf8"))
+		throw new Exception("Error loading character set utf8: %s", $conn->error);
+		
+
+	return $conn;   
 }
 
 ?>

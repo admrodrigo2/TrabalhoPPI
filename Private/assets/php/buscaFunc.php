@@ -64,8 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	        }
       	}
 
-      	$jsonStr = json_encode($result);
-		echo $jsonStr;
+      	die(json_encode($result));
 	}
 	catch (Exception $e) {
 		$msgErro = $e->getMessage();

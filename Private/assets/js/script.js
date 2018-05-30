@@ -206,8 +206,7 @@ function buscaFunc(){
     async: true,
     dataType: 'json',
     cache: false,
-    success: function(result){      
-
+    success: function(result){
       $("#funcTable tbody>tr").remove();
       for(var i = 0; i < result.length; i ++){
         var newRow = $("<tr>");
