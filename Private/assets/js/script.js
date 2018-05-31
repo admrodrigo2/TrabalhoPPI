@@ -10,10 +10,10 @@ $(function(){
       $("#divEsp").attr("required", false);
     }
   });
-  $('#cpf').mask('000.000.000-00', {reverse: true});
-  $('#cep').mask('99999-999', {reverse: true});
-  $('#carTrab').mask('9999999', {reverse: true});
-  $('#rg').mask('SS-99.999.999', {reverse: true});
+  $('#cpf').mask('000.000.000-00');
+  $('#cep').mask('99999-999');
+  $('#carTrab').mask('9999999');
+  $('#rg').mask('SS-99.999.999');
   buscaFunc();
   buscaCont();
   buscaAgend()
